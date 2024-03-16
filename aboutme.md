@@ -50,7 +50,7 @@ Jeune diplômé, flexible et déterminé, avec une année d'expérience en data 
 
 ---
 
-### LANGUAGES
+### LANGUES
 
 - **FRANÇAIS** NATIVE  
 - **ANGLAIS** NATIVE  
@@ -62,15 +62,15 @@ Jeune diplômé, flexible et déterminé, avec une année d'expérience en data 
 
 ### SKILLS
 
-- PYTHON
-- PANDAS  
-- PYTORCH
+- Python
+- Pandas  
+- PyTorch
 - SQL
-- GOOGLE CLOUD
-- DOCKER
-- DATA ANALYSIS
-- ESPRIT CRITIQUE
-- INTERDISCIPLINARITÉ
+- Google Cloud
+- Docker
+- Data Analysis
+- Esprit Critique
+- Interdisciplinarité
 
 ---
 
