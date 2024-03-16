@@ -38,10 +38,14 @@ Jeune diplômé, flexible et déterminé, avec une année d'expérience en data 
 **Master en Neurosciences Cognitives**  
 *Universiteit van Amsterdam*  
 2019-2022  
-- Stage de 5 mois au Comstock Brain Lab, Amsterdam, 1/20  
-- Stage de 6 mois au Max Planck Institute for Human Development, Berlin, 1/20  
+- Stage de 6 mois au Conscious Brain Lab, Amsterdam.
+- Stage de 10 mois au Max Planck Institute for Human Development, Berlin, 18/20  
 - Design d'expériences, collecte de données, analyse, rédaction scientifique, pensée critique, interdisciplinarité  
-- Stage de terrain en Primatologie  
+
+**Stage de terrain en primatologie**  
+*Forêt tropicale du Perak, Malaisie*  
+2019 (8 months)  
+- Etude de macaques sauvages en milieu naturel. Observation, collecte, et analyse de données comportementales.
 
 **Licence en Géographie Humaine, mention Bien**  
 *University of Poitiers, France*  
