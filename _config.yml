@@ -21,10 +21,10 @@ author: James Moultrie
 
 navbar-links:
   CV: "aboutme"
-  Academics: ""
-    - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
-    - Master's Diploma: "/assets/img/avatar-icon.png"
-    - Le Wagon Diploma: "/assets/img/lewagon.pdf"
+  #Academics: ""
+  #  - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
+  #  - Master's Diploma: "/assets/img/avatar-icon.png"
+  #  - Le Wagon Diploma: "/assets/img/lewagon.pdf"
 
 ################
 # --- Logo --- #
