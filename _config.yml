@@ -20,7 +20,9 @@ author: James Moultrie
 ###############################################
 
 navbar-links:
-  CV: "aboutme"
+  CV: ""
+  - CV Français: "aboutme"
+  - CV English: "aboutmeen"
   #Academics: ""
   #  - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
   #  - Master's Diploma: "/assets/img/avatar-icon.png"
