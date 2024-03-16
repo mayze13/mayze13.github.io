@@ -53,28 +53,7 @@ social-network-links:
   email: "james.moultrie13@gmail.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
   github: mayze13
-#  medium: yourname
-#  reddit: yourname
-   linkedin: jamesmoultrie13
-#  xing: yourname
-#  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-#  spotify: yourname
-#  steam: deanat78
-#  twitch: yourname
-#  yelp: yourname
-#  telegram: yourname
-#  calendly: yourname
-#  mastodon: instance.url/@username
-#  bluesky: yourname
-#  ORCID: your ORCID ID
-#  google-scholar: your google scholar
-#  discord: "invite_code" or "users/userid" or "invite/invite_code" 
-#  kaggle: yourname
-#  hackerrank: yourname
-#  gitlab: yourname
-#  itchio: yourname
+  linkedin: jamesmoultrie13
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
@@ -89,7 +68,6 @@ share-links-active:
   twitter: true
   facebook: true
   linkedin: true
-  vk: false
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -115,7 +93,7 @@ edit_page_button: true
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-keywords: datascience, data, science, ai, artificial, intelligence, neuroscience, machine, learning, ML, engineering"
+keywords: "datascience, data, science, ai, artificial, intelligence, neuroscience, machine, learning, ML, engineering"
 
 ######################################
 # --- Colours / background image --- #
