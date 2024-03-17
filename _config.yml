@@ -23,7 +23,7 @@ navbar-links:
   CV:
     - CV Français: "aboutme_fr"
     - CV English: "aboutme_en"
-  #Academics: ""
+  Academics:
     - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
   #  - Master's Diploma: "/assets/img/avatar-icon.png"
     - Le Wagon Diploma: "/assets/img/lewagon.pdf"
