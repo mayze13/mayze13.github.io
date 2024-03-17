@@ -56,15 +56,33 @@ A determined and adaptable young graduate with a year of experience in data scie
 
 ---
 
-| LANGUAGES   | STRENGTHS        | HOBBIES              |
-|-------------|------------------|----------------------|
-| **FRENCH**  | **Python** | **Jazz pianist**        |
-| NATIVE      | **Pandas** | **Audit Scientist**     |
-| **ENGLISH** | **SQL**       | **Educational Videos** |
-| NATIVE      | **Google Cloud**| **Self-development**   |
-| **SPANISH** | **Docker**                   |                      |
-| B2          | **Data analysis |                      |
-| **PORTUGUESE** |                |                      |
-| A2          |                    |                      |
-| **GERMAN**  |                    |                      |
-| B1          |                    |                      |
+### LANGUES
+
+- **FRANÇAIS** NATIVE  
+- **ANGLAIS** NATIVE  
+- **ESPAGNOL** B2  
+- **PORTUGAIS** A2  
+- **ALLEMAND** B1  
+
+---
+
+### SKILLS
+
+- Python
+- Pandas  
+- PyTorch
+- SQL
+- Google Cloud
+- Docker
+- Data Analysis
+- Esprit Critique
+- Interdisciplinarité
+
+---
+
+### HOBBIES
+
+- Piano jazz    
+- Autodidactisme  
+- Développement personnel  
+- Échecs
