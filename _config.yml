@@ -20,7 +20,7 @@ author: James Moultrie
 ###############################################
 
 navbar-links:
-  CV: ""
+CV: ""
   - CV Français: "aboutme_fr"
   - CV English: "aboutme_en"
   #Academics: ""
