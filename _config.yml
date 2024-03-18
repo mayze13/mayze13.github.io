@@ -20,13 +20,13 @@ author: James Moultrie
 ###############################################
 
 navbar-links:
-  Projects:
+  My Projects:
     - Flashcards: "https://github.com/davidlaroche/flashcards"
     - Summarizer: "https://github.com/mayze13/summarizer"
     - Question Generator from PDF: "https://github.com/mayze13/Question-Generator-from-PDF"
   CV:
-    - CV :U+1F1EB: : "aboutme_fr"
-    - CV :U+1F1EC: : "aboutme_en"
+    - CV 🇫🇷 : "aboutme_fr"
+    - CV 🇬🇧 : "aboutme_en"
   Academics:
     - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
   #  - Master's Diploma: "/assets/img/avatar-icon.png"
