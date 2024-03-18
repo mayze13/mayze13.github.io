@@ -20,6 +20,10 @@ author: James Moultrie
 ###############################################
 
 navbar-links:
+  Projects:
+    - Flashcards: "https://github.com/davidlaroche/flashcards"
+    - Summarizer: "https://github.com/mayze13/summarizer"
+    - Question Generator from PDF: "https://github.com/mayze13/Question-Generator-from-PDF"
   CV:
     - CV Français: "aboutme_fr"
     - CV English: "aboutme_en"
