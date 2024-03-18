@@ -25,8 +25,8 @@ navbar-links:
     - Summarizer: "https://github.com/mayze13/summarizer"
     - Question Generator from PDF: "https://github.com/mayze13/Question-Generator-from-PDF"
   CV:
-    - CV 🇫🇷 : "aboutme_fr"
-    - CV 🇬🇧 : "aboutme_en"
+    - CV :fr: : "aboutme_fr"
+    - CV :uk: : "aboutme_en"
   Academics:
     - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
   #  - Master's Diploma: "/assets/img/avatar-icon.png"
@@ -270,6 +270,7 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jemoji
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
