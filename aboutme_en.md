@@ -58,11 +58,12 @@ A determined and adaptable young graduate with a year of experience in data scie
 
 ### LANGUES
 
-- **FRANÇAIS** NATIVE  
-- **ANGLAIS** NATIVE  
-- **ESPAGNOL** B2  
-- **PORTUGAIS** A2  
-- **ALLEMAND** B1  
+- **FRENCH** NATIVE  
+- **ENGLISH** NATIVE  
+- **SPANISH** B2
+- **PORTUGUESE** B1  
+- **GERMAN** A2  
+
 
 ---
 
@@ -75,14 +76,15 @@ A determined and adaptable young graduate with a year of experience in data scie
 - Google Cloud
 - Docker
 - Data Analysis
-- Esprit Critique
-- Interdisciplinarité
+- Critical Thinking
+- Interdisciplinarity
 
 ---
 
 ### HOBBIES
 
 - Piano jazz    
-- Autodidactisme  
-- Développement personnel  
-- Échecs
+- Self Teaching
+- Personal development  
+- Chess
+- Science
