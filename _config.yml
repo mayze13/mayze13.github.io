@@ -25,8 +25,8 @@ navbar-links:
     - Summarizer: "https://github.com/mayze13/summarizer"
     - Question Generator from PDF: "https://github.com/mayze13/Question-Generator-from-PDF"
   CV:
-    - CV \U0001F1EB\U0001F1F7 : "aboutme_fr"
-    - CV \U0001F1EC\U0001F1E7 : "aboutme_en"
+    - FR : "aboutme_fr"
+    - EN : "aboutme_en"
   Academics:
     - Master's Thesis: "/assets/img/LiteratureThesisMOULTRIE.pdf"
   #  - Master's Diploma: "/assets/img/avatar-icon.png"
