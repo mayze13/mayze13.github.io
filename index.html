@@ -6,28 +6,23 @@ subtitle: Hi! Here's a lil' bit about me
 <style>
   .container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     max-width: 1500px;
     width: 100%;
     margin: auto;
     text-align: center;
   }
-  .text-section {
+  
+  .text-section, .image-section {
     flex: 1;
     padding: 20px;
-    max-width: 850px;
     text-align: center;
   }
-  .image-section {
-    flex: 1;
-    padding: 20px;
-    max-width: 650px;
-    text-align: center; /* Center the image in the column */
-  }
+  
   .image-section img {
-    width: 100%;
-    max-width: 650px;
+    width: auto;
+    max-width: 100%;
     height: auto;
   }
   @media (max-width: 768px) {
