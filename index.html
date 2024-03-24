@@ -8,16 +8,22 @@ subtitle: Hi! Here's a lil' bit about me
     display: flex;
     align-items: center; /* Align items vertically in the center */
     justify-content: center;
-    max-width: 1600px; /* Set maximum width of the container */
+    max-width: 1400px; /* Set maximum width of the container */
     width: 100%;
     margin: auto;
     text-align: center;
   }
   
-  .text-section, .image-section {
-    flex: 0 0 800px; /* Do not grow, do not shrink, start at 800px */
+  .text-section {
+    flex: 0 0 700px; /* Do not grow, do not shrink, start at 700px */
     padding: 20px;
-    text-align: center; /* Align text to the left */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .image-section {
+    flex: 0 0 500px; /* Do not grow, do not shrink, start at 500px */
+    padding: 20px;
+    text-align: center; /* Center align the images */
   }
   
   .image-section img {
@@ -32,6 +38,7 @@ subtitle: Hi! Here's a lil' bit about me
     .text-section, .image-section {
       max-width: 100%;
       flex-basis: auto; /* Let them grow to fit the container */
+      padding: 10px; /* Adjust padding for smaller screens if necessary */
     }
   }
 </style>
