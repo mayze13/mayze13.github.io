@@ -6,31 +6,32 @@ subtitle: Hi! Here's a lil' bit about me
 <style>
   .container {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Align items vertically in the center */
     justify-content: center;
-    max-width: 1500px;
+    max-width: 1600px; /* Set maximum width of the container */
     width: 100%;
     margin: auto;
     text-align: center;
   }
   
   .text-section, .image-section {
-    flex: 1;
+    flex: 0 0 800px; /* Do not grow, do not shrink, start at 800px */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Align text to the left */
   }
   
   .image-section img {
-    width: auto;
-    max-width: 100%;
+    width: 100%; /* Make the image take up 100% of the .image-section */
     height: auto;
   }
+  
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
     }
     .text-section, .image-section {
       max-width: 100%;
+      flex-basis: auto; /* Let them grow to fit the container */
     }
   }
 </style>
