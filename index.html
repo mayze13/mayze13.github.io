@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>james moultrie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- particles on right half only; left half intentionally empty -->
+<div id="particles-right-bg"></div>
+
+<div id="app">
+
+  <!-- ── LEFT SIDEBAR ── -->
+  <aside id="sidebar">
+
+    <!-- theme toggle -->
+    <div class="theme-toggle-wrap">
+      <button id="theme-toggle" class="theme-btn" aria-label="toggle theme">
+        <!-- sun icon — shown in dark mode (click → go light) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- moon icon — shown in light mode (click → go dark) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="theme-label">light</span>
+      </button>
+    </div>
+
+    <!-- profile photo
+         to use your photo: drop it in img/photo.jpg, then
+         replace the <span> below with <img src="img/photo.jpg" alt="james moultrie"> -->
+    <div class="avatar">
+      <img src="img/photo.jpg" alt="james moultrie">
+    </div>
+
+    <h1 class="profile-name">James Moultrie</h1>
+
+    <p class="profile-bio">phd student at UCL's Spiers Lab. exploring how the built environment shapes the mind.</p>
+
+    <div class="sidebar-divider"></div>
+
+    <ul class="meta-list">
+      <li class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C5.24 0 3 2.24 3 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 118 3.25 1.75 1.75 0 018 6.75z"/>
+        </svg>
+        <span>London, UK</span>
+      </li>
+      <li class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        <a href="https://github.com/mayze13" target="_blank" rel="noopener">mayze13</a>
+      </li>
+      <li class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.175-.431.573-.878 1.242-.878.877 0 1.228.663 1.228 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+        </svg>
+        <a href="https://linkedin.com/in/jamesmoultrie13" target="_blank" rel="noopener">jamesmoultrie13</a>
+      </li>
+      <li class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M.05 3.555A2 2 0 012 2h12a2 2 0 011.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 002 14h12a2 2 0 001.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zM16 11.801V4.697l-5.803 3.546L16 11.8z"/>
+        </svg>
+        <a href="mailto:james.moultrie.25@ucl.ac.uk">james.moultrie.25@ucl.ac.uk</a>
+      </li>
+    </ul>
+
+    <div class="sidebar-divider"></div>
+
+    <p class="sidebar-section-label">affiliations</p>
+    <ul class="affil-list">
+      <li>UCL · Spiers Lab</li>
+      <li>Le Wagon</li>
+    </ul>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="dl-buttons">
+      <!-- drop cv.pdf and resume.pdf into the project root to activate these links -->
+      <a href="cv.pdf" download class="dl-btn">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="11" height="11" aria-hidden="true">
+          <path d="M8 1v9M4.5 7l3.5 3 3.5-3M2 14h12"/>
+        </svg>
+        cv
+      </a>
+      <a href="resume.pdf" download class="dl-btn">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="11" height="11" aria-hidden="true">
+          <path d="M8 1v9M4.5 7l3.5 3 3.5-3M2 14h12"/>
+        </svg>
+        résumé
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main id="main-content">
+
+    <nav id="tab-nav">
+      <button class="tab-btn active" data-tab="about">about</button>
+      <button class="tab-btn" data-tab="research">research</button>
+      <button class="tab-btn" data-tab="data-science">data science</button>
+    </nav>
+
+    <div id="tab-panels">
+
+      <!-- ── ABOUT ── -->
+      <section id="tab-about" class="tab-panel active">
+
+        <p class="intro">I'm a PhD candidate at UCL's Spiers Lab, studying how the places we build shape the way we think and feel. Alongside the PhD, I teach data science for Le Wagon: bootcamps and corporate workshops across Europe and the US.</p>
+
+        <p class="section-label">experience</p>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">PhD Student</span>
+            <span class="card-date">2025–present</span>
+          </div>
+          <div class="card-org">UCL · Spiers Lab &nbsp;·&nbsp; London</div>
+          <p class="card-body">studying how environmental design shapes cognition, memory, and well-being. goal: evidence-based frameworks for better cities.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Data Science Teacher</span>
+            <span class="card-date">dec 2023–present</span>
+          </div>
+          <div class="card-org">Le Wagon &nbsp;·&nbsp; France</div>
+          <p class="card-body">bootcamps and corporate workshops across France, Europe, and the US. 100+ students, 250h instruction, 750h supervision.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Researcher · AI &amp; Energy</span>
+            <span class="card-date">sept 2024–july 2025</span>
+          </div>
+          <div class="card-org">Université de la Polynésie française &nbsp;·&nbsp; Punaauia</div>
+          <p class="card-body">led hydrogen energy integration research for French Polynesia. built simulation tools for EV fleets and hydrogen-powered public transport.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Data Scientist</span>
+            <span class="card-date">july–dec 2023</span>
+          </div>
+          <div class="card-org">Paradox Institute &nbsp;·&nbsp; Paris</div>
+          <p class="card-body">prototyped 5 AI proofs of concept using LangChain. EDA across diverse client datasets, stakeholder reporting.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Data Scientist</span>
+            <span class="card-date">april–july 2023</span>
+          </div>
+          <div class="card-org">INSERM &nbsp;·&nbsp; Bordeaux</div>
+          <p class="card-body">ML solutions for health research. fine-tuned LLMs for anamnesis classification at 97%+ accuracy, reducing patient triage time.</p>
+        </div>
+
+        <p class="section-label">education</p>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">MSc Brain and Cognitive Sciences</span>
+            <span class="card-date">2019–2021</span>
+          </div>
+          <div class="card-org">Universiteit van Amsterdam</div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">BA Human Geography</span>
+            <span class="card-date">2015–2018</span>
+          </div>
+          <div class="card-org">Université de Poitiers</div>
+        </div>
+
+        <p class="section-label">skills &amp; languages</p>
+
+        <div class="pill-group">
+          <span class="pill">machine learning</span>
+          <span class="pill">python</span>
+          <span class="pill">LLMs</span>
+          <span class="pill">teaching</span>
+          <span class="pill">pedagogy</span>
+          <span class="pill">data analysis</span>
+        </div>
+        <div class="pill-group" style="margin-top:0.5rem">
+          <span class="pill lang">en</span>
+          <span class="pill lang">fr</span>
+          <span class="pill lang">es</span>
+          <span class="pill lang">de</span>
+          <span class="pill lang">pt</span>
+        </div>
+
+      </section>
+
+      <!-- ── RESEARCH ── -->
+      <section id="tab-research" class="tab-panel">
+
+        <p class="intro">PhD candidate at UCL's Spiers Lab, investigating how the environments we build shape how we think, feel, and navigate.</p>
+
+        <p class="section-label">themes</p>
+
+        <div class="glass-card research">
+          <div class="card-role">Environmental Design &amp; Cognition</div>
+          <p class="card-body">our surroundings are not passive backdrops. sensory properties like light, complexity, nature, and scale measurably alter attention, memory, and emotional state.</p>
+        </div>
+
+        <div class="glass-card research">
+          <div class="card-role">Spatial Cognition &amp; Neuroscience</div>
+          <p class="card-body">behavioral and physiological methods to understand how people navigate and represent space. wayfinding, spatial memory, the neural correlates of place.</p>
+        </div>
+
+        <div class="glass-card research">
+          <div class="card-role">Applied Urban Research</div>
+          <p class="card-body">translate lab findings into principles for architects, planners, and policymakers. better environments through neuroscience, not just aesthetics.</p>
+        </div>
+
+        <p class="section-label">previous</p>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Research Intern</span>
+            <span class="card-date">2020–2021</span>
+          </div>
+          <div class="card-org">Max Planck Institute for Human Development &nbsp;·&nbsp; Berlin</div>
+          <p class="card-body">comparative study of virtual environments on neural and physiological correlates. literature reviews on nature, aesthetic preference, and restoration.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Research Intern</span>
+            <span class="card-date">2020</span>
+          </div>
+          <div class="card-org">Conscious Brain Lab &nbsp;·&nbsp; Amsterdam</div>
+          <p class="card-body">distinguishing between perceptual and post-perceptual bias in humans.</p>
+        </div>
+
+      </section>
+
+      <!-- ── DATA SCIENCE ── -->
+      <section id="tab-data-science" class="tab-panel">
+
+        <p class="intro">Building and teaching data science across bootcamps, corporate workshops, and research environments.</p>
+
+        <p class="section-label">teaching</p>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Bootcamp Instructor</span>
+            <span class="card-date">dec 2023–present</span>
+          </div>
+          <div class="card-org">Le Wagon</div>
+          <p class="card-body">100+ students. 250h instruction, 750h supervision. full-stack curriculum: Python through deep learning and deployment.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-role">Corporate Training</div>
+          <div class="card-org" style="margin-top:0.2rem">Michelin &nbsp;·&nbsp; ABB &nbsp;·&nbsp; Pierre Fabre &nbsp;·&nbsp; Stellantis</div>
+          <p class="card-body">15+ clients, 300h instructed across France, Europe, and the US.</p>
+        </div>
+
+        <p class="section-label">selected projects</p>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">LLM Fine-Tuning for Clinical Triage</span>
+            <span class="card-date">2023</span>
+          </div>
+          <div class="card-org">INSERM &nbsp;·&nbsp; Bordeaux</div>
+          <p class="card-body">fine-tuned language models to classify emergency anamneses. 97%+ accuracy. reduced manual triage time across hospital emergency workflows.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">Hydrogen Energy Simulation Tooling</span>
+            <span class="card-date">2024–25</span>
+          </div>
+          <div class="card-org">UPF &nbsp;·&nbsp; French Polynesia</div>
+          <p class="card-body">simulation tools for EV fleet demand and hydrogen-powered public transport. kWh optimisation and GHG projection. ANR-financed research.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-top">
+            <span class="card-role">AI Proof-of-Concept Development</span>
+            <span class="card-date">2023</span>
+          </div>
+          <div class="card-org">Paradox Institute &nbsp;·&nbsp; Paris</div>
+          <p class="card-body">5 AI PoCs and MVPs using LangChain. EDA across client datasets, stakeholder reporting.</p>
+        </div>
+
+        <p class="section-label">github</p>
+
+        <div class="glass-card gh-card">
+          <a href="https://github.com/mayze13" target="_blank" rel="noopener" class="gh-link">
+            <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            github.com/mayze13
+          </a>
+        </div>
+
+      </section>
+
+    </div><!-- /tab-panels -->
+  </main>
+
+</div><!-- /app -->
+
+<!-- typewriter — floats in the right particle zone -->
+<div id="typewriter-wrap" aria-hidden="true">
+  <span id="typewriter-text"></span><span class="tw-cursor"></span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/particles-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
