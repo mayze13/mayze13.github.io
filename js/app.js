@@ -310,7 +310,7 @@
       /* Desktop: enforce a consistent 62% split.
          Shrink content panels to fit within it so the ratio is the same
          on every viewport and in every browser. */
-      x = Math.round(vw * 0.70);
+      x = Math.round(vw * 0.62);
       var maxW = Math.round(x - sbRight - padLeft - 40); /* 40px breathing room */
       maxW = Math.max(maxW, 220); /* never collapse below 220px */
       if (maxW < 540) {
