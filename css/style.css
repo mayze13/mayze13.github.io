@@ -38,9 +38,10 @@ body.light {
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 19px; }
+html { font-size: 19px; height: 100%; }
 
 body {
+  height: 100%;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
@@ -95,11 +96,12 @@ body {
 
 /* ── App shell ── */
 #app {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  position: relative;
   z-index: 2;
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
 /* ── Sidebar ── */
@@ -669,10 +671,9 @@ body.light .intro {
 }
 
 @media (max-width: 640px) {
+  html, body { height: auto; }
   #split-line { display: none; }
   #app {
-    position: relative;
-    top: auto; right: auto; bottom: auto; left: auto;
     flex-direction: column;
     height: auto;
   }
