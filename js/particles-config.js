@@ -6,8 +6,8 @@
 window.getParticlesConfig = function(color) {
   return {
     particles: {
-      /* 210 spread across full viewport → ~105 visible in the right half */
-      number: { value: 210, density: { enable: true, value_area: 900 } },
+      /* 168 spread across full viewport → ~84 visible in the right half */
+      number: { value: 168, density: { enable: true, value_area: 900 } },
       color: { value: color },
       shape: { type: 'circle', stroke: { width: 0 } },
       opacity: {
@@ -41,8 +41,10 @@ window.getParticlesConfig = function(color) {
         resize:   true
       },
       modes: {
-        grab: { distance: 130, line_linked: { opacity: 0.38 } },
-        push: { particles_nb: 3 }
+        grab:    { distance: 130, line_linked: { opacity: 0.38 } },
+        repulse: { distance: 120, duration: 0.4 },
+        bubble:  { distance: 160, size: 9, duration: 0.4, opacity: 0.9, speed: 3 },
+        push:    { particles_nb: 3 }
       }
     },
     retina_detect: true

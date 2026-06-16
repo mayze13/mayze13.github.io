@@ -84,15 +84,40 @@
     return arr.slice().sort(function () { return Math.random() - 0.5; });
   }
 
-  function loadSentences() {
-    return fetch('sentences.md')
-      .then(function (r) { return r.text(); })
-      .then(function (text) {
-        rotating = text.split('\n')
-          .map(function (l) { return l.trim(); })
-          .filter(function (l) { return l.length > 0 && l[0] !== '#'; });
-      })
-      .catch(function () { rotating = []; });
+  async function loadSentences() {
+    try {
+      var text = await (await fetch('sentences.md')).text();
+      rotating = text.split('\n')
+        .map(function (l) { return l.trim(); })
+        .filter(function (l) { return l.length > 0 && l[0] !== '#'; });
+    } catch (_) {
+      rotating = [];
+    }
+  }
+
+  function nudgeParticles(cx, cy) {
+    if (!window.pJSDom || !window.pJSDom.length) return;
+    var pJS = window.pJSDom[0].pJS;
+    var arr = pJS && pJS.particles && pJS.particles.array;
+    if (!arr) return;
+    var R     = 120;  /* repulsion radius px          */
+    var S     = 0.28; /* impulse per character        */
+    var MAX_V = 1.8;  /* velocity cap (~3x normal)    */
+    for (var i = 0; i < arr.length; i++) {
+      var p  = arr[i];
+      var dx = p.x - cx;
+      var dy = p.y - cy;
+      var d2 = dx * dx + dy * dy;
+      if (d2 < R * R && d2 > 1) {
+        var d   = Math.sqrt(d2);
+        var mag = (1 - d / R) * S;
+        p.vx += (dx / d) * mag;
+        p.vy += (dy / d) * mag;
+        /* clamp so particles can't reach runaway speeds */
+        var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+        if (spd > MAX_V) { p.vx = p.vx / spd * MAX_V; p.vy = p.vy / spd * MAX_V; }
+      }
+    }
   }
 
   function getWrapPos(wrapEl) {
@@ -104,7 +129,7 @@
     var vw = window.innerWidth;
     var vh = window.innerHeight;
     return {
-      x: vw * 0.52 + Math.random() * (vw * 0.37),
+      x: vw * 0.52 + Math.random() * (vw * 0.28),
       y: vh * 0.12 + Math.random() * (vh * 0.68)
     };
   }
@@ -173,8 +198,13 @@
   }
 
   async function typeOut(el, s, speed) {
+    var wrap = document.getElementById('typewriter-wrap');
     for (var c = 0; c <= s.length; c++) {
       el.textContent = s.slice(0, c);
+      if (wrap) {
+        var r = wrap.getBoundingClientRect();
+        nudgeParticles(r.left + el.offsetWidth, r.top + r.height * 0.5);
+      }
       await sleep(speed);
     }
   }
@@ -230,6 +260,23 @@
     }
   }
 
+  /* ── Particle mode switcher ── */
+
+  function initParticleModes() {
+    document.querySelectorAll('.pmode-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.dataset.mode;
+        if (window.pJSDom && window.pJSDom.length) {
+          window.pJSDom[0].pJS.interactivity.events.onhover.mode = mode;
+        }
+        document.querySelectorAll('.pmode-btn').forEach(function (b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+      });
+    });
+  }
+
   function initTypewriter() {
     var wrapEl   = document.getElementById('typewriter-wrap');
     var textEl   = document.getElementById('typewriter-text');
@@ -247,6 +294,7 @@
     initTabs();
     initGlimmer();
     initTypewriter();
+    initParticleModes();
 
     document.getElementById('theme-toggle').addEventListener('click', function () {
       applyTheme(!isDark);
