@@ -17,8 +17,8 @@
   --blur:      18px;
   --sidebar-w: 260px;
   --content-w: 540px;
-  /* 62% of viewport — JS enforces this ratio and shrinks content to fit */
-  --split-x: 62vw;
+  /* fallback: sidebar + padding + content + small gap (JS overrides with exact DOM measurement) */
+  --split-x: calc(var(--sidebar-w) + 3.5rem + var(--content-w) + 2rem);
   --font: 'Figtree', system-ui, -apple-system, sans-serif;
 }
 
