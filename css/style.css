@@ -17,6 +17,9 @@
   --blur:      18px;
   --sidebar-w: 260px;
   --content-w: 540px;
+  --main-pad:  3.5rem;  /* must match #main-content padding-left */
+  /* split-x = where the particle zone starts — always after content */
+  --split-x: calc(var(--sidebar-w) + var(--main-pad) + var(--content-w) + 2.5rem);
   --font: 'Figtree', system-ui, -apple-system, sans-serif;
 }
 
@@ -55,7 +58,7 @@ body {
 /* ── Vertical split line ── */
 #split-line {
   position: fixed;
-  left: 50%;
+  left: var(--split-x);
   top: 0;
   height: 100vh;
   width: 1px;
@@ -82,8 +85,8 @@ body {
   /* L-shaped clip: full width from sidebar edge in the tab-nav strip (top 10rem),
      right half only below that — so particles are visible behind the tab buttons
      but not behind the intro / body text. */
-  -webkit-clip-path: inset(0 0 0 50%);
-  clip-path: inset(0 0 0 50%);
+  -webkit-clip-path: inset(0 0 0 var(--split-x));
+  clip-path: inset(0 0 0 var(--split-x));
 }
 
 #particles-left-bg canvas,
@@ -528,10 +531,10 @@ body.light .intro {
 /* ── Typewriter ── */
 #typewriter-wrap {
   position: fixed;
-  left: 52%;
+  left: calc(var(--split-x) + 1.5rem);
   top: 60%;
   right: auto;
-  max-width: 36vw;
+  max-width: calc(100vw - var(--split-x) - 3rem);
   z-index: 3;
   pointer-events: none;
 }
@@ -666,7 +669,7 @@ body.light .intro {
 
 /* ── Responsive ── */
 @media (max-width: 820px) {
-  :root { --sidebar-w: 200px; --content-w: 480px; }
+  :root { --sidebar-w: 200px; --content-w: 480px; --main-pad: 2rem; }
   #main-content { padding: 2.5rem 2rem 3rem; }
 }
 

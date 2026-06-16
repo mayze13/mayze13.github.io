@@ -124,11 +124,24 @@
     return { x: r.left, y: r.top };
   }
 
+  function getSplitX() {
+    var line = document.getElementById('split-line');
+    if (line) {
+      var px = parseFloat(line.style.left);
+      if (!isNaN(px)) return px;
+      px = parseFloat(window.getComputedStyle(line).left);
+      if (!isNaN(px)) return px;
+    }
+    return window.innerWidth * 0.52;
+  }
+
   function randomRightPos() {
-    var vw = window.innerWidth;
-    var vh = window.innerHeight;
+    var vw      = window.innerWidth;
+    var vh      = window.innerHeight;
+    var splitX  = getSplitX();
+    var zone    = vw - splitX;
     return {
-      x: vw * 0.52 + Math.random() * (vw * 0.28),
+      x: splitX + zone * 0.05 + Math.random() * (zone * 0.75),
       y: vh * 0.12 + Math.random() * (vh * 0.68)
     };
   }
@@ -224,10 +237,11 @@
     var BREAK  = 5000; /* silence between loops — cursor blinks through */
 
     /* anchor to pixel coords from the CSS starting position */
-    await sleep(80);
+    await sleep(120);
     var r = wrapEl.getBoundingClientRect();
-    wrapEl.style.left = r.left + 'px';
-    wrapEl.style.top  = r.top  + 'px';
+    wrapEl.style.left  = r.left + 'px';
+    wrapEl.style.top   = r.top  + 'px';
+    wrapEl._pinned = true;
 
     while (true) {
       /* ── core sentences (typed in place, no movement between them) ── */
@@ -276,6 +290,31 @@
     });
   }
 
+  /* ── Split layout: keep line + particles after content ── */
+
+  function updateSplitLayout() {
+    var panels    = document.getElementById('tab-panels');
+    var line      = document.getElementById('split-line');
+    var particles = document.getElementById('particles-right-bg');
+    if (!panels || !line) return;
+
+    var x = Math.round(panels.getBoundingClientRect().right + 40);
+
+    line.style.left = x + 'px';
+
+    if (particles) {
+      var clip = 'inset(0 0 0 ' + x + 'px)';
+      particles.style.webkitClipPath = clip;
+      particles.style.clipPath       = clip;
+    }
+
+    /* Update typewriter initial position if not yet pinned */
+    var tw = document.getElementById('typewriter-wrap');
+    if (tw && !tw._pinned) {
+      tw.style.left = (x + 24) + 'px';
+    }
+  }
+
   function initCardSketches() {
     document.querySelectorAll('.card-sketch path').forEach(function(path) {
       path.style.setProperty('--sketch-len', path.getTotalLength());
@@ -301,6 +340,15 @@
     initTypewriter();
     initParticleModes();
     initCardSketches();
+
+    /* Run after first paint so getBoundingClientRect has real values */
+    requestAnimationFrame(function () { setTimeout(updateSplitLayout, 60); });
+
+    var _resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(_resizeTimer);
+      _resizeTimer = setTimeout(updateSplitLayout, 80);
+    });
 
     document.getElementById('theme-toggle').addEventListener('click', function () {
       applyTheme(!isDark);
