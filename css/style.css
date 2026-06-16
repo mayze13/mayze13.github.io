@@ -75,7 +75,7 @@ body {
    Left half has zero particles by design. */
 #particles-right-bg {
   position: fixed;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   z-index: 0;
   pointer-events: none;
   /* L-shaped clip: full width from sidebar edge in the tab-nav strip (top 10rem),
@@ -88,7 +88,7 @@ body {
 #particles-left-bg canvas,
 #particles-right-bg canvas {
   position: absolute !important;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   width: 100% !important;
   height: 100% !important;
 }
@@ -97,14 +97,20 @@ body {
 #app {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0;
   z-index: 2;
-  display: grid;
-  grid-template-columns: var(--sidebar-w) 1fr;
+  display: flex;
+  flex-direction: row;
 }
 
 /* ── Sidebar ── */
 #sidebar {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 260px;
+  flex-basis: var(--sidebar-w);
+  width: 260px;
+  width: var(--sidebar-w);
+  height: 100%;
   min-width: 0;
   overflow-y: auto;
   padding: 1.5rem 1.75rem 2rem;
@@ -167,7 +173,7 @@ body {
 }
 .avatar-initials {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +184,7 @@ body {
 }
 .avatar img {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -301,7 +307,7 @@ body {
 .theme-btn::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   border-radius: inherit;
   background: radial-gradient(
     circle at var(--gx, 50%) var(--gy, 50%),
@@ -330,6 +336,8 @@ body.light .theme-btn::before {
 
 /* ── Main content ── */
 #main-content {
+  flex: 1 1 0;
+  height: 100%;
   min-width: 0;
   overflow-y: auto;
   padding: 2.8rem 3.5rem 4rem;
@@ -664,19 +672,20 @@ body.light .intro {
   #split-line { display: none; }
   #app {
     position: relative;
-    inset: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    top: auto; right: auto; bottom: auto; left: auto;
+    flex-direction: column;
     height: auto;
   }
   #particles-right-bg { -webkit-clip-path: none; clip-path: none; }
   #typewriter-wrap { display: none; }
   #sidebar {
+    width: 100%;
+    flex: none;
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--border);
     padding: 1.5rem;
   }
-  #main-content { height: auto; padding: 2rem 1.5rem 3rem; }
+  #main-content { flex: none; height: auto; padding: 2rem 1.5rem 3rem; }
   :root { --content-w: 100%; }
 }
