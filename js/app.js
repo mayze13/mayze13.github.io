@@ -70,8 +70,7 @@
 
   var CORE = [
     "Hi, I'm James.",
-    "Welcome to my website.",
-    "I coded this from scratch."
+    "Welcome to my website."
   ];
 
   var rotating = [];
@@ -245,7 +244,7 @@
       await sleep(ARRIVE);
 
       /* ── random sentences (comet after every one, including the last) ── */
-      var picks = shuffled(rotating).slice(0, 3);
+      var picks = shuffled(rotating).slice(0, 4);
       for (var j = 0; j < picks.length; j++) {
         await typeOut(textEl, picks[j], TYPE);
         await sleep(LINGER);
