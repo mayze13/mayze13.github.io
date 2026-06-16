@@ -2,12 +2,12 @@
 
 /* ── Design tokens ── */
 :root {
-  --bg: #0a0e1a;
+  --bg: #13110e;
   --text:       #e8dcc8;
   --text-dim:   #b8ad9e;
   --text-muted: rgba(232, 220, 200, 0.58);
-  --surface:      rgba(10, 14, 26, 0.58);
-  --surface-side: rgba(8, 11, 22, 0.74);
+  --surface:      rgba(19, 17, 14, 0.58);
+  --surface-side: rgba(14, 12, 10, 0.82);
   --border:        rgba(232, 220, 200, 0.09);
   --border-h:      rgba(232, 220, 200, 0.22);
   --border-accent: rgba(232, 220, 200, 0.2);
@@ -53,12 +53,11 @@ body {
 }
 
 /* ── Vertical split line ── */
-body::after {
-  content: '';
+#split-line {
   position: fixed;
   left: 50%;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 1px;
   background: var(--border-h);
   z-index: 5;
@@ -107,6 +106,7 @@ body::after {
 /* ── Sidebar ── */
 #sidebar {
   height: 100vh;
+  min-width: 0;
   overflow-y: auto;
   padding: 1.5rem 1.75rem 2rem;
   background: var(--surface-side);
@@ -332,6 +332,7 @@ body.light .theme-btn::before {
 /* ── Main content ── */
 #main-content {
   height: 100vh;
+  min-width: 0;
   overflow-y: auto;
   padding: 2.8rem 3.5rem 4rem;
   scrollbar-width: thin;
@@ -585,6 +586,34 @@ body.light .intro {
   display: none !important;
 }
 
+/* ── Card sketch icons (hover draw animation) ── */
+.card-sketch {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  align-self: center;
+  min-width: 0;
+}
+.card-sketch svg { overflow: visible; flex-shrink: 0; }
+.card-sketch path {
+  fill: none;
+  stroke: var(--border-h);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--sketch-len, 0);
+  stroke-dashoffset: var(--sketch-len, 0);
+  transition: stroke-dashoffset 0.65s ease;
+}
+.glass-card:hover .card-sketch path { stroke-dashoffset: 0; }
+/* Stagger icons left-to-right */
+.card-sketch svg:nth-child(1) path { transition-delay: 0s; }
+.card-sketch svg:nth-child(2) path { transition-delay: 0.12s; }
+.card-sketch svg:nth-child(3) path { transition-delay: 0.24s; }
+.card-sketch svg:nth-child(4) path { transition-delay: 0.36s; }
+
 /* ── Particle mode controls ── */
 #particle-controls {
   position: fixed;
@@ -635,7 +664,7 @@ body.light .intro {
 
 @media (max-width: 640px) {
   html, body { overflow: auto; }
-  body::after { display: none; }
+  #split-line { display: none; }
   #app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; }
   #particles-right-bg { -webkit-clip-path: none; clip-path: none; }
   #typewriter-wrap { display: none; }

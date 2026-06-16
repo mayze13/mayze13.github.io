@@ -276,6 +276,12 @@
     });
   }
 
+  function initCardSketches() {
+    document.querySelectorAll('.card-sketch path').forEach(function(path) {
+      path.style.setProperty('--sketch-len', path.getTotalLength());
+    });
+  }
+
   function initTypewriter() {
     var wrapEl   = document.getElementById('typewriter-wrap');
     var textEl   = document.getElementById('typewriter-text');
@@ -294,6 +300,7 @@
     initGlimmer();
     initTypewriter();
     initParticleModes();
+    initCardSketches();
 
     document.getElementById('theme-toggle').addEventListener('click', function () {
       applyTheme(!isDark);
