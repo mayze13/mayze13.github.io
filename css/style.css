@@ -17,8 +17,8 @@
   --blur:      18px;
   --sidebar-w: 260px;
   --content-w: 540px;
-  /* 62% of viewport — JS enforces this ratio and shrinks content to fit */
-  --split-x: 62vw;
+  /* 70% of viewport — JS enforces this ratio and shrinks content to fit */
+  --split-x: 70vw;
   --font: 'Figtree', system-ui, -apple-system, sans-serif;
 }
 
