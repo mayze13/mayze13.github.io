@@ -17,9 +17,8 @@
   --blur:      18px;
   --sidebar-w: 260px;
   --content-w: 540px;
-  --main-pad:  3.5rem;  /* must match #main-content padding-left */
-  /* split-x = where the particle zone starts — always after content */
-  --split-x: calc(var(--sidebar-w) + var(--main-pad) + var(--content-w) + 2.5rem);
+  /* 62% of viewport — JS enforces this ratio and shrinks content to fit */
+  --split-x: 62vw;
   --font: 'Figtree', system-ui, -apple-system, sans-serif;
 }
 
@@ -669,7 +668,7 @@ body.light .intro {
 
 /* ── Responsive ── */
 @media (max-width: 820px) {
-  :root { --sidebar-w: 200px; --content-w: 480px; --main-pad: 2rem; }
+  :root { --sidebar-w: 200px; --content-w: 480px; }
   #main-content { padding: 2.5rem 2rem 3rem; }
 }
 

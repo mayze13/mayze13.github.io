@@ -294,24 +294,51 @@
 
   function updateSplitLayout() {
     var panels    = document.getElementById('tab-panels');
+    var tabNav    = document.getElementById('tab-nav');
     var line      = document.getElementById('split-line');
     var particles = document.getElementById('particles-right-bg');
-    if (!panels || !line) return;
+    var mc        = document.getElementById('main-content');
+    var sidebar   = document.getElementById('sidebar');
+    if (!panels || !line || !mc || !sidebar) return;
 
-    var x = Math.round(panels.getBoundingClientRect().right + 40);
+    var vw      = window.innerWidth;
+    var sbRight = sidebar.getBoundingClientRect().right;
+    var padLeft = parseFloat(window.getComputedStyle(mc).paddingLeft);
+    var x;
+
+    if (vw >= 1024) {
+      /* Desktop: enforce a consistent 62% split.
+         Shrink content panels to fit within it so the ratio is the same
+         on every viewport and in every browser. */
+      x = Math.round(vw * 0.62);
+      var maxW = Math.round(x - sbRight - padLeft - 40); /* 40px breathing room */
+      maxW = Math.max(maxW, 220); /* never collapse below 220px */
+      if (maxW < 540) {
+        panels.style.maxWidth = maxW + 'px';
+        if (tabNav) tabNav.style.maxWidth = maxW + 'px';
+      } else {
+        /* Wide enough — restore CSS default */
+        panels.style.maxWidth = '';
+        if (tabNav) tabNav.style.maxWidth = '';
+      }
+    } else {
+      /* Narrower desktop / tablet: don't shrink content, just clear the line */
+      panels.style.maxWidth = '';
+      if (tabNav) tabNav.style.maxWidth = '';
+      x = Math.round(panels.getBoundingClientRect().right + 32);
+    }
 
     line.style.left = x + 'px';
-
     if (particles) {
       var clip = 'inset(0 0 0 ' + x + 'px)';
       particles.style.webkitClipPath = clip;
       particles.style.clipPath       = clip;
     }
 
-    /* Update typewriter initial position if not yet pinned */
     var tw = document.getElementById('typewriter-wrap');
     if (tw && !tw._pinned) {
-      tw.style.left = (x + 24) + 'px';
+      tw.style.left     = (x + 24) + 'px';
+      tw.style.maxWidth = Math.max(vw - x - 32, 80) + 'px';
     }
   }
 
